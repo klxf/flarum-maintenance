@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ $settings->get('forum_title') }}</title>
     <style>
+        body {
+            margin: 0;
+        }
         .main {
             text-align: center;
         }
@@ -20,6 +23,12 @@
         .logo {
             fill: {{ $settings->get('theme_primary_color') }};
             height: 128px;
+        }
+        .footer-content {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 16px 0;
         }
         .footer-logo {
             font-size: 24px;
