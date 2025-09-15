@@ -1,0 +1,35 @@
+{
+    "name": "klxf/flarum-maintenance",
+    "description": "Highly customizable maintenance mode",
+    "keywords": [
+        "flarum"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "require": {
+        "flarum/core": "^1.8.0"
+    },
+    "authors": [
+        {
+            "name": "Fang_Zhijian",
+            "email": "klxf@vip.qq.com",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Klxf\\MaintenanceMode\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Maintenance Mode",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-hard-hat",
+                "color": "#fff",
+                "backgroundColor": "#881415"
+            }
+        }
+    }
+}

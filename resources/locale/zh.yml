@@ -1,0 +1,22 @@
+klxf-maintenance:
+  admin:
+    dashboard:
+      maintenance-widget:
+        title: 维护模式已激活
+        detail: 论坛当前处于维护模式，只有具备相应权限的用户才能访问论坛
+
+    settings:
+      maintenance-mode-enabled:
+        label: 启用维护模式
+      maintenance-mode-title:
+        label: 维护页标题
+      maintenance-mode-message:
+        label: 维护页提示
+      maintenance-mode-html-template:
+        label: 维护页 HTML 模板
+        help: 此处可使用如 <code>$message</code> 的占位符，更多信息请查阅自述文件
+        reset-btn: 重置为默认
+        reset-help: 重置模板后保存才可生效
+
+    permissions:
+      bypass: 允许在维护时访问
