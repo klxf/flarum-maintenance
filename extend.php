@@ -30,6 +30,6 @@ return [
     (new Extend\Middleware('forum'))
         ->add(MaintenanceForumMiddleware::class),
 
-    (new Extend\View)
-        ->namespace('klxf.maintenance-mode', __DIR__.'/resources/defaults'),
+    (new Extend\Console)
+        ->command(Console\ToggleCMD::class),
 ];

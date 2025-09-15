@@ -9,6 +9,7 @@ A [Flarum](https://flarum.org) extension. Highly customizable maintenance mode.
 - Enable/disable maintenance mode.
 - Customizable maintenance page with HTML support.
 - Only administrators can access the forum when maintenance mode is enabled.
+- PHP commands to enable/disable maintenance mode.
 
 ## Installation
 
@@ -35,6 +36,14 @@ You can use the following placeholders in the maintenance page:
   - Example: `$settings->get('forum_title')` for the forum title.
 - `$url` - Flarum URL Generator.
   - Example: `$url->to('forum')->base()` for the forum base URL.
+
+## Commands
+### Toggle Maintenance Mode
+You can toggle maintenance mode using the following command:
+
+```sh
+php flarum maintenanceMode:toggle
+```
 
 ## Links
 
