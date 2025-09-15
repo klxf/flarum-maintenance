@@ -4,6 +4,12 @@
 
 A [Flarum](https://flarum.org) extension. Highly customizable maintenance mode.
 
+## Features
+
+- Enable/disable maintenance mode.
+- Customizable maintenance page with HTML support.
+- Only administrators can access the forum when maintenance mode is enabled.
+
 ## Installation
 
 Install with composer:
