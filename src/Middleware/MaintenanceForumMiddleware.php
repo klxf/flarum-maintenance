@@ -7,6 +7,7 @@ use Flarum\Http\UrlGenerator;
 use Illuminate\Contracts\View\Factory;
 use Flarum\Http\RequestUtil;
 use Flarum\Settings\SettingsRepositoryInterface;
+use Illuminate\Support\Str;
 use Klxf\MaintenanceMode\Util\BladeCompiler;
 use Laminas\Diactoros\Response\HtmlResponse;
 use Psr\Http\Message\ResponseInterface;
@@ -39,14 +40,16 @@ class MaintenanceForumMiddleware implements MiddlewareInterface
             return $handler->handle($request);
         }
 
+        if (Str::startsWith($request->getUri()->getPath(), '/maintenance/auth/')) {
+            return $handler->handle($request);
+        }
+
         $cssFile = preg_grep('~^forum.*\.css$~', scandir($this->assets_dir));
 
         $template = $this->settings->get(
             'klxf-maintenance.template',
             file_get_contents(__DIR__."/../../resources/defaults/template.blade.php")
         );
-
-
 
         $view = BladeCompiler::render($template, [
             'settings'   => $this->settings,

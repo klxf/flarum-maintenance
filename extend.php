@@ -12,6 +12,8 @@
 namespace Klxf\MaintenanceMode;
 
 use Flarum\Extend;
+use Klxf\MaintenanceMode\Middleware\MaintenanceApiMiddleware;
+use Klxf\MaintenanceMode\Middleware\MaintenanceAuthMiddleware;
 use Klxf\MaintenanceMode\Middleware\MaintenanceForumMiddleware;
 
 return [
@@ -29,7 +31,12 @@ return [
 
     (new Extend\Middleware('forum'))
         ->add(MaintenanceForumMiddleware::class),
+    (new Extend\Middleware('api'))
+        ->add(MaintenanceApiMiddleware::class),
 
     (new Extend\Console)
         ->command(Console\ToggleCMD::class),
+
+    (new Extend\Routes('forum'))
+        ->get('/maintenance/auth/{token}', 'klxf-maintenance.auth', MaintenanceAuthMiddleware::class),
 ];

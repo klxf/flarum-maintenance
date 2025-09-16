@@ -68,6 +68,16 @@ app.initializers.add('klxf-maintenance', () => {
                 </div>
             );
         })
+        .registerSetting({
+            setting: "klxf-maintenance.auth",
+            type: "boolean",
+            label: app.translator.trans(
+                "klxf-maintenance.admin.settings.maintenance-mode-auth.label"
+            ),
+            help: app.translator.trans(
+                "klxf-maintenance.admin.settings.maintenance-mode-auth.help"
+            )
+        })
         .registerPermission(
             {
                 icon: "fas fa-hard-hat",

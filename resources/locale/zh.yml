@@ -17,6 +17,9 @@ klxf-maintenance:
         help: 此处可使用如 <code>$message</code> 的占位符，更多信息请查阅自述文件
         reset-btn: 重置为默认
         reset-help: 重置模板后保存才可生效
+      maintenance-mode-auth:
+        label: 启用令牌登录
+        help: 可使用开发者令牌通过 <code>/maintenance/auth/$开发者令牌</code> 登录论坛
 
     permissions:
       bypass: 允许在维护时访问

@@ -37,6 +37,18 @@ You can use the following placeholders in the maintenance page:
 - `$url` - Flarum URL Generator.
   - Example: `$url->to('forum')->base()` for the forum base URL.
 
+## Use Developer Tokens Bypass Maintenance Mode
+
+If you enable maintenance mode, you can still access the forum using developer tokens.
+
+Enabling the "Enable Token Authentication" setting allows you to access the forum using developer tokens even when maintenance mode is enabled.
+
+You can authenticate and login to the forum using the following URL:
+
+```
+{$forum_base_url}/maintenance/auth/{$token}
+```
+
 ## Commands
 ### Toggle Maintenance Mode
 You can toggle maintenance mode using the following command:
